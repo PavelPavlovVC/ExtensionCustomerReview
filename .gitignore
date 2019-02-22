@@ -3,3 +3,10 @@
 ################################################################################
 
 /CustomerReviews.Core/bin/Debug
+/.vs
+/CustomerReviews.Core/obj/Debug
+/CustomerReviews.Data/bin/Debug
+/CustomerReviews.Data/obj/Debug
+/CustomerReviews.Web/bin
+/CustomerReviews.Web/obj/Debug
+/packages
