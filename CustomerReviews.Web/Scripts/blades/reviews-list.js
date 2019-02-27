@@ -36,6 +36,7 @@
                     template: 'Modules/$(CustomerReviews.Web)/Scripts/blades/customerReview-detail.tpl.html'
                 };
                 bladeNavigationService.showBlade(newBlade, blade);
+                console.log('end');
             }
             blade.edit = function (data) {
                 newBlade = {

@@ -13,6 +13,8 @@ namespace CustomerReviews.Web.Controllers.Api
         private readonly ISecurityService _securityService;
         private readonly IPermissionScopeService _permissionScopeService;
 
+        public CustomerReviewsBaseController() { }
+
         public CustomerReviewsBaseController(ISecurityService securityService, IPermissionScopeService permissionScopeService)
         {
             _securityService = securityService;

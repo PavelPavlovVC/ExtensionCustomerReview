@@ -12,13 +12,12 @@
                         <input ng-model="blade.currentEntity.content" focus-on="" required>
                     </div>
                     <label class="form-label">{{'customerReviews.blades.review-list.labels.product' | translate}}</label>
-                    <div class="form-input" ng-click='blade.selectProduct(blade.currentEntity.productId)'>
-                        <input ng-model="blade.currentEntity.productTitle" focus-on="" required>
+                    <a href="" ng-click="blade.selectProduct(blade.currentEntity.productId)" class="form-edit" va-permission="customerReview:update"><i class="form-ico fa fa-pencil"></i></a>
+                    <div class="form-input">
+                        <input ng-model="blade.currentEntity.productTitle" focus-on="" required readonly>
                     </div>
                 </div>
             </form>
-
-            <!--<va-widget-container group="catalogDetail" blade="blade" gridster-opts="gridsterOpts"></va-widget-container>-->
         </div>
     </div>
 </div>
