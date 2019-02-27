@@ -7,7 +7,8 @@ namespace CustomerReviews.Core.Services
         CustomerReview[] GetByIds(string[] ids);
 
         void SaveCustomerReviews(CustomerReview[] items);
-
+        void SaveCustomerReview(CustomerReview item);
         void DeleteCustomerReviews(string[] ids);
+        CustomerReview GetById(string id);
     }
 }

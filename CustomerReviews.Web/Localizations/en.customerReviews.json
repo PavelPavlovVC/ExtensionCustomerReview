@@ -3,9 +3,13 @@
     "blades": {
       "review-list": {
         "labels": {
+          "customerReview": "Customer review",
+          "authorNickname": "Author nickname",
           "content": "Content",
+          "product": "Product",
           "modifiedDate": "Last updated",
-          "no-review": "No Customer Reviews found"
+          "no-review": "No Customer Reviews found",
+          "product-detail": "Product detail"
         }
       }
     },

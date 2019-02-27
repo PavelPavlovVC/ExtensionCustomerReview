@@ -8,5 +8,6 @@ namespace CustomerReviews.Core.Model
         public string Content { get; set; }
         public bool IsActive { get; set; }
         public string ProductId { get; set; }
+        public string ProductTitle { get; set; }
     }
 }

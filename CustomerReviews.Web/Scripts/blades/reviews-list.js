@@ -21,17 +21,33 @@
             }
 
             blade.selectNode = function (data) {
-                //$scope.selectedNodeId = data.id;
+                console.log(data);
+                $scope.selectedNodeId = data.id;
 
-                //var newBlade = {
-                //    id: 'reviewDetails',
-                //    currentEntityId: data.id,
-                //    currentEntity: data,
-                //    title: data.name,
-                //    controller: 'virtoCommerce.storeModule.storeDetailController',
-                //    template: 'Modules/$(VirtoCommerce.Store)/Scripts/blades/store-detail.tpl.html'
-                //};
-                //bladeNavigationService.showBlade(newBlade, blade);
+                var newBlade = {
+                    id: 'reviewDetails',
+                    currentEntityId: data.id,
+                    currentEntity: data,
+                    title: data.name,
+                    nickname: data.nickname,
+                    //controller: 'virtoCommerce.storeModule.storeDetailController',
+                    //template: 'Modules/$(VirtoCommerce.Store)/Scripts/blades/store-detail.tpl.html'
+                    controller: 'CustomerReviews.Web.customerReviewDetailController',
+                    template: 'Modules/$(CustomerReviews.Web)/Scripts/blades/customerReview-detail.tpl.html'
+                };
+                bladeNavigationService.showBlade(newBlade, blade);
+            }
+            blade.edit = function (data) {
+                newBlade = {
+                    id: data.productId,
+                    itemId: data.productId,
+                    //productType: listItem.productType,
+                    //title: listItem.name,
+                    //catalog: blade.catalog,
+                    controller: 'virtoCommerce.catalogModule.itemDetailController',
+                    template: 'Modules/$(VirtoCommerce.Catalog)/Scripts/blades/item-detail.tpl.html'
+                };
+                bladeNavigationService.showBlade(newBlade, blade);
             }
 
             function openBladeNew() {

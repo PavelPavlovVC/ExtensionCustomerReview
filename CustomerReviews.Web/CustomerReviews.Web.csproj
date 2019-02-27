@@ -123,6 +123,10 @@
     <None Include="Content\help\stylesheet.css" />
     <None Include="Content\help\sample.png" />
     <None Include="app.config" />
+    <Content Include="Scripts\blades\customerReview-detail.js" />
+    <Content Include="Scripts\blades\customerReview-detail.tpl.html" />
+    <Content Include="Scripts\blades\item-detail.js" />
+    <Content Include="Scripts\blades\item-detail.tpl.html" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,13 +140,17 @@
     <Content Include="Content\css\CustomerReviews.Web.css" />
     <Content Include="Scripts\blades\reviews-list.js" />
     <Content Include="Scripts\blades\reviews-list.tpl.html" />
+    <Content Include="Scripts\blades\store-detail.js" />
+    <Content Include="Scripts\blades\store-detail.tpl.html" />
     <Content Include="Scripts\CustomerReviews.Web.js" />
     <Content Include="Scripts\resources\CustomerReviews.WebApi.js" />
     <Content Include="Scripts\widgets\customerReviewWidget.js" />
     <Content Include="Scripts\widgets\customerReviewWidget.tpl.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Api\CustomerReviewsBaseController.cs" />
     <Compile Include="Controllers\Api\CustomerReviewsController.cs" />
+    <Compile Include="Converters\CustomerReviewConverter.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\PredefinedPermissions.cs" />

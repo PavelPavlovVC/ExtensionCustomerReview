@@ -1,0 +1,24 @@
+﻿<div class="blade-content">
+    <div class="blade-inner">
+        <div class="inner-block">
+            <form class="form" name="formScope">
+                <div ng-init="setForm(formScope)">
+                    <label class="form-label">{{'customerReviews.blades.review-list.labels.authorNickname' | translate}}</label>
+                    <div class="form-input">
+                        <input ng-model="blade.currentEntity.authorNickname" focus-on="" required>
+                    </div>
+                    <label class="form-label">{{'customerReviews.blades.review-list.labels.content' | translate}}</label>
+                    <div class="form-input">
+                        <input ng-model="blade.currentEntity.content" focus-on="" required>
+                    </div>
+                    <label class="form-label">{{'customerReviews.blades.review-list.labels.product' | translate}}</label>
+                    <div class="form-input" ng-click='blade.selectProduct(blade.currentEntity.productId)'>
+                        <input ng-model="blade.currentEntity.productTitle" focus-on="" required>
+                    </div>
+                </div>
+            </form>
+
+            <!--<va-widget-container group="catalogDetail" blade="blade" gridster-opts="gridsterOpts"></va-widget-container>-->
+        </div>
+    </div>
+</div>

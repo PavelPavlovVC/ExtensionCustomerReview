@@ -26,6 +26,9 @@
                     <li class="menu-item" ng-click='blade.selectNode(contextMenuEntity)'>
                         <i class="menu-ico fa fa-edit"></i> {{'platform.commands.manage' | translate}}
                     </li>
+                    <li class="menu-item" ng-click='blade.edit(contextMenuEntity)'>
+                        <i class="menu-ico fa fa-edit"></i> {{'customerReviews.blades.review-list.labels.product-detail' | translate}}
+                    </li>
                 </ul>
             </div>
             <p class="note" ng-if="!blade.currentEntities.length">{{ 'customerReviews.blades.review-list.labels.no-review' | translate }}</p>

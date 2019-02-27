@@ -7,8 +7,8 @@ namespace CustomerReviews.Data.Repositories
     public interface ICustomerReviewRepository : IRepository
     {
         IQueryable<CustomerReviewEntity> CustomerReviews { get; }
-
         CustomerReviewEntity[] GetByIds(string[] ids);
+        CustomerReviewEntity GetById(string id);
         void DeleteCustomerReviews(string[] ids);
     }
 }

@@ -25,6 +25,11 @@ namespace CustomerReviews.Data.Repositories
             return CustomerReviews.Where(x => ids.Contains(x.Id)).ToArray();
         }
 
+        public CustomerReviewEntity GetById(string id)
+        {
+            return CustomerReviews.SingleOrDefault(x => x.Id == id);
+        }
+
         public void DeleteCustomerReviews(string[] ids)
         {
             var items = GetByIds(ids);

@@ -20,6 +20,9 @@ namespace CustomerReviews.Data.Model
         [StringLength(128)]
         public string ProductId { get; set; }
 
+        [StringLength(1024)]
+        public string ProductTitle { get; set; }
+
         public virtual CustomerReview ToModel(CustomerReview customerReview)
         {
             if (customerReview == null)
@@ -35,7 +38,7 @@ namespace CustomerReviews.Data.Model
             customerReview.Content = Content;
             customerReview.IsActive = IsActive;
             customerReview.ProductId = ProductId;
-
+            customerReview.ProductTitle = ProductTitle;
             return customerReview;
         }
 
@@ -56,7 +59,8 @@ namespace CustomerReviews.Data.Model
             Content = customerReview.Content;
             IsActive = customerReview.IsActive;
             ProductId = customerReview.ProductId;
-
+            ProductTitle = customerReview.ProductTitle;
+            
             return this;
         }
 
