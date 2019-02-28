@@ -5,11 +5,7 @@ using CustomerReviews.Core.Model;
 using CustomerReviews.Core.Services;
 using CustomerReviews.Web.Converters;
 using CustomerReviews.Web.Security;
-using VirtoCommerce.Domain.Catalog.Services;
 using VirtoCommerce.Domain.Commerce.Model.Search;
-using VirtoCommerce.Platform.Core.Assets;
-using VirtoCommerce.Platform.Core.Common;
-//using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Web.Security;
 using coreModel = VirtoCommerce.Domain.Catalog.Model;
 using webModel = CustomerReviews.Core.Model;
@@ -24,7 +20,6 @@ namespace CustomerReviews.Web.Controllers.Api
 
         
         public CustomerReviewsController(ICustomerReviewSearchService customerReviewSearchService, ICustomerReviewService customerReviewService)
-            //: base(securityService, permissionScopeService)
         {
             _customerReviewSearchService = customerReviewSearchService;
             _customerReviewService = customerReviewService;
@@ -36,7 +31,6 @@ namespace CustomerReviews.Web.Controllers.Api
         [HttpPost]
         [Route("search")]
         [ResponseType(typeof(GenericSearchResult<CustomerReview>))]
-        //[CheckPermission(Permission = PredefinedPermissions.CustomerReviewRead)]
         public IHttpActionResult SearchCustomerReviews(CustomerReviewSearchCriteria criteria)
         {
             var result = _customerReviewSearchService.SearchCustomerReviews(criteria);
@@ -47,7 +41,7 @@ namespace CustomerReviews.Web.Controllers.Api
         ///  Create new or update existing customer review
         /// </summary>
         /// <param name="customerReviews">Customer reviews</param>
-        /// <returns></returns>
+        /// <returns>Return standart type IHttpActionResult</returns>
         [HttpPost]
         [Route("")]
         [ResponseType(typeof(void))]
@@ -61,8 +55,8 @@ namespace CustomerReviews.Web.Controllers.Api
         /// <summary>
         ///  Create new or update existing customer review
         /// </summary>
-        /// <param name="customerReviews">Customer reviews</param>
-        /// <returns></returns>
+        /// <param name="customerReview">Customer reviews</param>
+        /// <returns>Return standart type IHttpActionResult</returns>
         [HttpPut]
         [Route("")]
         [ResponseType(typeof(void))]
@@ -76,7 +70,7 @@ namespace CustomerReviews.Web.Controllers.Api
         /// Delete Customer Reviews by IDs
         /// </summary>
         /// <param name="ids">IDs</param>
-        /// <returns></returns>
+        /// <returns>Return standart type IHttpActionResult</returns>
         [HttpDelete]
         [Route("")]
         [ResponseType(typeof(void))]
@@ -91,7 +85,6 @@ namespace CustomerReviews.Web.Controllers.Api
         /// Gets CustomerReview by id.
         /// </summary>
         /// <param name="id">Item id.</param>
-        ///<param name="respGroup">Response group.</param>
         [HttpGet]
         [Route("{id}")]
         [ResponseType(typeof(GenericSearchResult<CustomerReview>))]

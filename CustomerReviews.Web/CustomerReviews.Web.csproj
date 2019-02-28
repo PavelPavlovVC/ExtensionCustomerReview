@@ -125,8 +125,6 @@
     <None Include="app.config" />
     <Content Include="Scripts\blades\customerReview-detail.js" />
     <Content Include="Scripts\blades\customerReview-detail.tpl.html" />
-    <Content Include="Scripts\blades\item-detail.js" />
-    <Content Include="Scripts\blades\item-detail.tpl.html" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

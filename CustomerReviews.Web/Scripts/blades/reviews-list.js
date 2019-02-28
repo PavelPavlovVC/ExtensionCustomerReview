@@ -21,7 +21,6 @@
             }
 
             blade.selectNode = function (data) {
-                console.log(data);
                 $scope.selectedNodeId = data.id;
 
                 var newBlade = {
@@ -30,13 +29,10 @@
                     currentEntity: data,
                     title: data.name,
                     nickname: data.nickname,
-                    //controller: 'virtoCommerce.storeModule.storeDetailController',
-                    //template: 'Modules/$(VirtoCommerce.Store)/Scripts/blades/store-detail.tpl.html'
                     controller: 'CustomerReviews.Web.customerReviewDetailController',
                     template: 'Modules/$(CustomerReviews.Web)/Scripts/blades/customerReview-detail.tpl.html'
                 };
                 bladeNavigationService.showBlade(newBlade, blade);
-                console.log('end');
             }
             blade.edit = function (data) {
                 newBlade = {

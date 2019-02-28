@@ -36,11 +36,9 @@
             function canSave() {
                 return isDirty() && formScope && formScope.$valid;
             }
+
             blade.selectProduct = function (parentElement) {
-                console.log('Select product');
                 if (parentElement.productId) {
-                    console.log('Product');
-                    console.log(parentElement.productId);
                     let itemDetailBlade = {
                         id: "listItemDetail",
                         itemId: parentElement.productId,
@@ -52,7 +50,6 @@
                     return;
                 }
                 var selectedListEntries = [];
-                console.log('execute select product');
                 var newBlade = {
                     id: "CatalogEntrySelect",
                     title: "marketing.blades.catalog-items-select.title-product",
@@ -67,14 +64,9 @@
                                 parentElement.productId = selectedListEntries[0].id;
                                 parentElement.productName = selectedListEntries[0].name;
                                 parentElement.productCode = selectedListEntries[0].code;
-                                //console.log(selectedListEntries[0].id);
-                                //console.log(selectedListEntries[0].name);
                                 bladeNavigationService.closeBlade(blade);
-                                console.log(selectedListEntries[0].name);
                                 $scope.blade.currentEntity.productTitle = selectedListEntries[0].name;
                                 $scope.blade.currentEntity.productId = selectedListEntries[0].id;;
-                                //$scope.productId = selectedListEntries[0].name;
-                                //$scope.productTitle=
                             },
                             canExecuteMethod: function () {
                                 return selectedListEntries.length == 1;
@@ -101,23 +93,11 @@
                         }
                     }
                 };
-                /*
-                newBlade = {
-                    id: data,
-                    itemId: data,
-                    //productType: listItem.productType,
-                    //title: listItem.name,
-                    //catalog: blade.catalog,
-                    controller: 'virtoCommerce.catalogModule.catalogsListController',
-                    template: 'Modules/$(VirtoCommerce.Catalog)/Scripts/blades/catalogs-list.tpl.html'
-                };
-                */
                 bladeNavigationService.showBlade(newBlade, $scope.blade);
             }
             
             $scope.saveChanges = function () {
                 blade.isLoading = true;
-                console.log('saveChanges');
                 if (blade.isNew) {
                     reviewsApi.save({}, blade.currentEntity, function (data) {
                         blade.isNew = undefined;
